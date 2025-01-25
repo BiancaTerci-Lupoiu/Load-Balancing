@@ -109,9 +109,9 @@ We can adjust how Nginx performs load balancing by modifying the nginx.conf file
 
   ```nginx
   upstream app_cluster {
-  server app:3000 weight=2; # This instance gets twice the traffic
-  server app:3000;
-  server app:3000;
+    server app:3000 weight=2; # This instance gets twice the traffic
+    server app:3000;
+    server app:3000;
   }
   ```
 
@@ -120,10 +120,10 @@ We can adjust how Nginx performs load balancing by modifying the nginx.conf file
 
   ```nginx
   upstream app_cluster {
-  least_conn;
-  server app:3000;
-  server app:3000;
-  server app:3000;
+    least_conn;
+    server app:3000;
+    server app:3000;
+    server app:3000;
   }
   ```
 
@@ -167,7 +167,7 @@ You can also check the logs of the app containers to confirm the traffic distrib
 docker-compose logs -f app
 ```
 
-### Step 6 :Stop the Application
+### Step 6: Stop the Application
 
 To stop the Docker containers, run:
 
